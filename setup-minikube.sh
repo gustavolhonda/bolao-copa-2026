@@ -6,16 +6,16 @@ minikube start
 echo "🔌 Habilitando o Ingress no Minikube..."
 minikube addons enable ingress
 
-echo "📦 Construindo as imagens Docker da aplicação..."
-docker build -t bolao-frontend:v1 ./frontend
-docker build -t bolao-backend:v1 ./backend
+#echo "📦 Construindo as imagens Docker da aplicação..."
+#docker build -t bolao-frontend:v1 ./frontend
+#docker build -t bolao-backend:v1 ./backend
 
-echo "📥 Carregando as imagens para dentro do Minikube..."
-minikube image load bolao-frontend:v1
-minikube image load bolao-backend:v1
+#echo "📥 Carregando as imagens para dentro do Minikube..."
+#minikube image load bolao-frontend:v1
+#minikube image load bolao-backend:v1
 
 #echo "Limpando webhook do Ingress para evitar bloqueio no WSL..."
-#kubectl delete validatingwebhookconfigurations ingress-nginx-admission --ignore-not-found=true
+kubectl delete validatingwebhookconfigurations ingress-nginx-admission --ignore-not-found=true
 
 echo "📦 Atualizando dependências do Helm..."
 helm dependency update ./bolao-chart
