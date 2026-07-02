@@ -1,0 +1,14 @@
+image:
+  repository: postgres
+  tag: "13"
+  pullPolicy: IfNotPresent
+
+service:
+  port: 5432
+
+replicaCount: 1
+
+database:
+  name: bolao_db
+  user: postgres
+  password: postgres_password

@@ -1,0 +1,16 @@
+apiVersion: v2
+name: bolao
+description: Helm Chart do Bolão Copa 2026
+type: application
+version: 0.1.0
+appVersion: "1.0"
+
+dependencies:
+  - name: backend
+    version: 0.1.0
+
+  - name: frontend
+    version: 0.1.0
+
+  - name: db
+    version: 0.1.0

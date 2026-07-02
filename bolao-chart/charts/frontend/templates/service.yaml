@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.global.frontend.name }}-service
+  labels:
+    run: {{ .Values.global.frontend.name }}-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: {{ .Values.global.frontend.port }}
+      targetPort: {{ .Values.global.frontend.port }}
+      protocol: TCP
+  selector:
+    app: {{ .Values.global.frontend.name }}

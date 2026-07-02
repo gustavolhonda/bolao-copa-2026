@@ -1,0 +1,14 @@
+global:
+  backend:
+    name: backend
+    port: 3000
+
+  frontend:
+    name: frontend
+    port: 80
+
+  db:
+    name: db
+
+  ingress:
+    host: k8s.local
